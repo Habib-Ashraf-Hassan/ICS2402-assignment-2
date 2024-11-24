@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usability Heuristics Fisheye Menu</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Usability Heuristics</h1>
+        <h2>Below are the 10 usability heuristics</h2>
+      </header>
+
+      <div class="menu-container">
+        <div
+          class="menu-item"
+          data-description="Keep users informed about what's going on through appropriate feedback within reasonable time."
+        >
+          <span class="label">UH#1</span>
+          <span class="details">Visibility of system status</span>
+        </div>
+        <div
+          class="menu-item"
+          data-description="Speak the users' language. Follow real-world conventions, making information appear natural and logical."
+        >
+          <span class="label">UH#2</span>
+          <span class="details">Match between system and real world</span>
+        </div>
+        <div
+          class="menu-item"
+          data-description="Users often make mistakes. Support undo and redo actions, and provide clear emergency exits."
+        >
+          <span class="label">UH#3</span>
+          <span class="details">User control and freedom</span>
+        </div>
+        <div
+          class="menu-item"
+          data-description="Follow platform conventions. Users shouldn't wonder whether different words, situations, or actions mean the same thing."
+        >
+          <span class="label">UH#4</span>
+          <span class="details">Consistency and standards</span>
+        </div>
+        <div
+          class="menu-item"
+          data-description="Prevent problems from occurring. Either eliminate error-prone conditions or check for them and present users with confirmation options."
+        >
+          <span class="label">UH#5</span>
+          <span class="details">Error prevention</span>
+        </div>
+        <div
+          class="menu-item"
+          data-description="Minimize user memory load. Make objects, actions, and options visible. Instructions should be visible or easily retrievable."
+        >
+          <span class="label">UH#6</span>
+          <span class="details">Recognition rather than recall</span>
+        </div>
+        <div
+          class="menu-item"
+          data-description="Accelerators speed up interaction for expert users. Allow users to tailor frequent actions."
+        >
+          <span class="label">UH#7</span>
+          <span class="details">Flexibility and efficiency</span>
+        </div>
+        <div
+          class="menu-item"
+          data-description="Dialogues should contain only relevant information. Every extra unit of information competes with relevant units."
+        >
+          <span class="label">UH#8</span>
+          <span class="details">Aesthetic and minimalist design</span>
+        </div>
+        <div
+          class="menu-item"
+          data-description="Error messages should be expressed in plain language, precisely indicate the problem, and constructively suggest a solution."
+        >
+          <span class="label">UH#9</span>
+          <span class="details">Help users with errors</span>
+        </div>
+        <div
+          class="menu-item"
+          data-description="Help and documentation should be easy to search, focused on user's task, list concrete steps, and not be too large."
+        >
+          <span class="label">UH#10</span>
+          <span class="details">Help and documentation</span>
+        </div>
+      </div>
+      <div id="tooltip" class="tooltip"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

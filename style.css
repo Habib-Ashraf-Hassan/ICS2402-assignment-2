@@ -1,0 +1,193 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f6f9fc 0%, #eef2f7 100%);
+  font-family: "Poppins", sans-serif;
+  color: #2c3e50;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(120deg, #2c3e50, #3498db);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #34495e;
+}
+
+.menu-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05), 0 6px 6px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.menu-item {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.menu-item:hover {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #0061ff 0%, #60efff 100%);
+  z-index: 1;
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15), 0 3px 6px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.menu-item .label {
+  font-size: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item:hover .label {
+  display: none;
+}
+
+.menu-item .details {
+  display: none;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  line-height: 1.2;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item:hover .details {
+  display: block;
+}
+
+.tooltip {
+  position: fixed;
+  display: none;
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 300px;
+  font-size: 0.9rem;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+.menu-item.active {
+  animation: pulse 1.5s infinite;
+  background: linear-gradient(135deg, #0061ff 0%, #60efff 100%);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(79, 172, 254, 0.4);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(79, 172, 254, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(79, 172, 254, 0);
+  }
+}
+
+/* Generate different gradients for each menu item */
+.menu-item:nth-child(2n) {
+  background: linear-gradient(135deg, #4158d0 0%, #c850c0 100%);
+}
+
+.menu-item:nth-child(3n) {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.menu-item:nth-child(4n) {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.menu-item:nth-child(5n) {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Hover states for different items */
+.menu-item:nth-child(2n):hover {
+  background: linear-gradient(135deg, #3545a7 0%, #a341a0 100%);
+}
+
+.menu-item:nth-child(3n):hover {
+  background: linear-gradient(135deg, #37c367 0%, #2ed6b7 100%);
+}
+
+.menu-item:nth-child(4n):hover {
+  background: linear-gradient(135deg, #e55b82 0%, #ebc937 100%);
+}
+
+.menu-item:nth-child(5n):hover {
+  background: linear-gradient(135deg, #5468c4 0%, #633d89 100%);
+}
+
+/* Rest of the media queries remain the same */
+@media screen and (max-width: 768px) {
+  /* ... same existing code ... */
+}
+
+@media screen and (max-width: 480px) {
+  /* ... same existing code ... */
+}
+
+@media (hover: none) {
+  /* ...same existing code ... */
+}
+
+@media screen and (max-width: 360px) {
+  /* ...same existing code ... */
+}
