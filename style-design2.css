@@ -1,0 +1,224 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f6f9fc 0%, #eef2f7 100%);
+  font-family: "Poppins", sans-serif;
+  color: #2c3e50;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(120deg, #2c3e50, #3498db);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #34495e;
+}
+
+.menu-container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1200px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.menu-item {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.menu-item:hover {
+  width: 120px;
+  height: 120px;
+  z-index: 1;
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.menu-item .label {
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item:hover .label {
+  font-size: 1.5rem;
+}
+
+.menu-item .details {
+  position: absolute; /* Takes it out of normal flow */
+  top: -40px; /* Positions above the circle */
+  left: 50%; /* Centers horizontally */
+  transform: translateX(-50%); /* Perfect centering */
+  background: rgba(44, 62, 80, 0.9);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap; /* Prevents text wrapping */
+  opacity: 0; /* Initially invisible */
+  transition: opacity 0.3s ease; /* Fade in/out smoothly */
+  pointer-events: none; /* Prevents interference with hover */
+}
+
+.menu-item:hover .details {
+  opacity: 1; /* Makes visible when hovering */
+}
+
+.tooltip {
+  position: fixed;
+  display: none;
+  background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 300px;
+  font-size: 0.9rem;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  pointer-events: none;
+}
+
+/* Add these button styles to your existing styles section */
+.button-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.next-design-btn {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(79, 172, 254, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.next-design-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
+  background: linear-gradient(135deg, #0061ff 0%, #60efff 100%);
+}
+
+.next-design-btn .arrow {
+  transition: transform 0.3s ease;
+}
+
+.next-design-btn:hover .arrow {
+  transform: translateX(-5px); /* Changed to move left instead of right */
+}
+
+/* Responsive styles */
+@media screen and (max-width: 480px) {
+  .next-design-btn {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
+
+  .button-container {
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* Generate different gradients for each menu item */
+.menu-item:nth-child(2n) {
+  background: linear-gradient(135deg, #4158d0 0%, #c850c0 100%);
+}
+
+.menu-item:nth-child(3n) {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.menu-item:nth-child(4n) {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.menu-item:nth-child(5n) {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.menu-item.active {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(79, 172, 254, 0.4);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(79, 172, 254, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(79, 172, 254, 0);
+  }
+}
+footer {
+  font-size: 12px;
+  text-align: center;
+  color: #666;
+  margin-top: 20px;
+}
+
+footer a {
+  color: #0073e6;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
